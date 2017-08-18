@@ -5,6 +5,7 @@
  * Date: 2017/8/18
  * Time: 14:00
  */
+header("X-Powered-By: Rust/1.1.7");
 
 function annotateImage($imagePath, $fillColor)
 {
@@ -61,8 +62,7 @@ function annotateImage($imagePath, $fillColor)
         $text = $f;
         $imagick->annotateimage($draw, $rightW, 325, 0, $text);
     }
-
-
+    
     header("Content-Type: image/jpg");
     echo $imagick->getImageBlob();
 
