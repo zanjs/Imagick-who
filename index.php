@@ -39,31 +39,26 @@ function annotateImage($imagePath, $fillColor)
 
     if($b){
         $text = $b;
-        $draw->setFont("./JXK.ttf");
         $imagick->annotateimage($draw, $rightW, 30, 0, $text);
     }
 
     if($c){
         $text = $c;
-        $draw->setFont("./JXK.ttf");
         $imagick->annotateimage($draw, $leftW, 170, 0, $text);
     }
 
     if($d){
         $text = $d;
-        $draw->setFont("./JXK.ttf");
         $imagick->annotateimage($draw, $rightW, 180, 0, $text);
     }
 
     if($e){
         $text = $e;
-        $draw->setFont("./JXK.ttf");
         $imagick->annotateimage($draw, $leftW, 315, 0, $text);
     }
 
     if($f){
         $text = $f;
-        $draw->setFont("./JXK.ttf");
         $imagick->annotateimage($draw, $rightW, 325, 0, $text);
     }
 
