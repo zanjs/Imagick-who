@@ -6,11 +6,14 @@
  * Time: 14:00
  */
 
-function annotateImage($imagePath, $fillColor,$a)
+function annotateImage($imagePath, $fillColor)
 {
     $imagick = new Imagick($imagePath);
 
+    $leftW = 14;
+    $rightW = 200;
 
+    $a = $_GET['a'];
     $b = $_GET['b'];
     $c = $_GET['c'];
     $d = $_GET['d'];
@@ -18,7 +21,6 @@ function annotateImage($imagePath, $fillColor,$a)
     $f = $_GET['f'];
 
     $draw = new ImagickDraw();
-//    $draw->setStrokeColor($strokeColor);
     $draw->setFillColor($fillColor);
 
     $draw->setStrokeWidth(1);
@@ -32,37 +34,37 @@ function annotateImage($imagePath, $fillColor,$a)
     if($a){
         $text = $a;
         $draw->setFont("./JXK.ttf");
-        $imagick->annotateimage($draw, 14, 26, 0, $text);
+        $imagick->annotateimage($draw, $leftW, 26, 0, $text);
     }
 
     if($b){
         $text = $b;
         $draw->setFont("./JXK.ttf");
-        $imagick->annotateimage($draw, 200, 30, 0, $text);
+        $imagick->annotateimage($draw, $rightW, 30, 0, $text);
     }
 
     if($c){
         $text = $c;
         $draw->setFont("./JXK.ttf");
-        $imagick->annotateimage($draw, 14, 170, 0, $text);
+        $imagick->annotateimage($draw, $leftW, 170, 0, $text);
     }
 
     if($d){
         $text = $d;
         $draw->setFont("./JXK.ttf");
-        $imagick->annotateimage($draw, 200, 180, 0, $text);
+        $imagick->annotateimage($draw, $rightW, 180, 0, $text);
     }
 
     if($e){
         $text = $e;
         $draw->setFont("./JXK.ttf");
-        $imagick->annotateimage($draw, 14, 315, 0, $text);
+        $imagick->annotateimage($draw, $leftW, 315, 0, $text);
     }
 
     if($f){
         $text = $f;
         $draw->setFont("./JXK.ttf");
-        $imagick->annotateimage($draw, 200, 325, 0, $text);
+        $imagick->annotateimage($draw, $rightW, 325, 0, $text);
     }
 
 
@@ -70,8 +72,6 @@ function annotateImage($imagePath, $fillColor,$a)
     echo $imagick->getImageBlob();
 
 }
-
-$a = $_GET['a'];
 
 $color = $_GET['color'];
 
@@ -82,6 +82,4 @@ if($color){
     $fillColor = $color;
 }
 
-
-annotateImage($imagePath,$fillColor,$a);
-//echo $a;
+annotateImage($imagePath,$fillColor);
