@@ -62,7 +62,7 @@ function annotateImage($imagePath, $fillColor)
         $text = $f;
         $imagick->annotateimage($draw, $rightW, 325, 0, $text);
     }
-    
+
     header("Content-Type: image/jpg");
     echo $imagick->getImageBlob();
 
