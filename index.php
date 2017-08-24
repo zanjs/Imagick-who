@@ -34,6 +34,7 @@ function annotateImage($imagePath, $fillColor)
 
     if($a){
         $text = $a;
+        $draw->setTextDecoration(4);
         $draw->setFont("./JXK.ttf");
         $imagick->annotateimage($draw, $leftW, 26, 0, $text);
     }
